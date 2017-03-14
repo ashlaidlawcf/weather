@@ -29,9 +29,9 @@ Weather.prototype.compareTemps = function(city1, city2) {
       var tempCity2 = response2.main.temp;
 
       if(tempCity1 > tempCity2) {
-        $("#output").text(city1 + " is warmer than " + city2);
+        $("#output").text(city1 + " is warmer than " + city2 + ".");
       } else {
-        $("#output").text(city1 + " is cooler than " + city2);
+        $("#output").text(city1 + " is cooler than " + city2 + ".");
       }
     });
   });
