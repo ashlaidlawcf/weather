@@ -1,20 +1,17 @@
-var apiKey = require("./..//env").apiKey;
 var Weather = require("./../js/weather.js").weatherModule;
-var displayHumidity = function(city, humidityData) {
-  $("#output").text("<p>The humidity in " + city + " is " + humidity + "%.");
-};
-var displayTemp = function(city, tempData) {
-  $("#output").text("<p>The temperature in " + city + " is " + temp + "°.");
-};
+
 
 $(function() {
+  var currentWeatherObject = new Weather();
   $("#humidity").click(function() {
     var city = $("#city").val();
     $("#city").val("");
+    currentWeatherObject.getHumidity(city);
   });
 
-  $("#temperature").click(function() {
+  $("#temp").click(function() {
     var city = $("#city").val();
     $("#city").val("");
+    currentWeatherObject.getTemp(city);
   });
 });
